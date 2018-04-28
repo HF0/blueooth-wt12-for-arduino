@@ -8,8 +8,9 @@ A Simple arduino library for the WT12 bluetooth module by Bluegiga
 
 To generate the documentation 
 
-* doxygen
-* moxygen. (npm install moxygen -g to install it)
+* doxygen [Link](https://github.com/doxygen/doxygen)
+* moxygen. [Link](https://github.com/sourcey/moxygen)
+     * (npm install moxygen -g to install it)
 
 Run the .bat file provided to generate a markdown file with the documentation
 
@@ -25,6 +26,3 @@ Run the .bat file provided to generate a markdown file with the documentation
 
 * An alternative comprehensive library for WT modules [Link](https://github.com/jrowberg/iwrap)
 
-# Todo
-
-* Link to other repositories
