@@ -23,7 +23,7 @@ Run the .bat file provided to generate a markdown file with the documentation
 
 # Links
 
-* An alternative complete library for WT modules TODO
+* An alternative comprehensive library for WT modules [Link](https://github.com/jrowberg/iwrap)
 
 # Todo
 
