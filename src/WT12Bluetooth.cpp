@@ -78,12 +78,12 @@ bool WT12Bluetooth::connect(char btMacAddr[]){
 
 	sprintf(buffer, WT12_CALL_SPRINT_COMMAND, btMacAddr);
 	btserial->println(buffer);
-	int answer = bufferUntilOrTimeout(5000l, 
+	int answer = bufferUntilOrTimeout(10000l, 
 		WT12_CALL_OK_BEGGINING_COMMAND, WT12_CALL_END_BEGGINING_COMMAND);
 	if( answer != 0){
 		discardUntilNewLineOrTimeout();
 	}
-	commandMode = answer == 0;
+	commandMode = answer != 1;
 	return isConnected();
 }
 
