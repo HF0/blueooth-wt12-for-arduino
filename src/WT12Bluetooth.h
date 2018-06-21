@@ -75,7 +75,7 @@ class WT12Bluetooth {
 	* \param dataSize. Size of the data to be sent in bytes
 	* \returns true if the operation went well (a connection is active), false otherwise
 	*/
-	bool send(char data[], int dataSize);
+	bool send(const char data[], int dataSize);
 	
 	/** \brief Sends a single value (as String) using the current active connection
 	* \returns true if the operation went well (a connection is active), false otherwise
@@ -86,13 +86,13 @@ class WT12Bluetooth {
 	* \param data. Data to be sent. All the data up to the \0 character will be sent (excluding \0)
 	* \returns true if the operation went well (a connection is active), false otherwise
 	*/
-	bool sendString(char data[]);
+	bool sendString(const char data[]);
 	
 	/** \brief Opens a connection to the specified bluetooth mac addr
 	* \param btMacAddr. String with the mac address of the destination module. e.g. "BB:D3:8C:70:E0:DA" or "BBD38C70E0DA"
 	* \returns true if the operation went well, false otherwise
 	*/
-	bool connect(char btMacAddr[]);
+	bool connect(const char btMacAddr[]);
 
 	/** \brief Waits for a connection to be initiated from a remote module
 	*

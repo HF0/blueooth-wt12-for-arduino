@@ -67,7 +67,7 @@ bool WT12Bluetooth::setName(const char name[]){
 	return true;
 }
 
-bool WT12Bluetooth::connect(char btMacAddr[]){
+bool WT12Bluetooth::connect(const char btMacAddr[]){
 	if( isConnected()){
 		return true;
 	}
@@ -141,7 +141,7 @@ void WT12Bluetooth::discardUntilNewLineOrTimeout(){
 	bufferUntilOrTimeout(2000l, WT12_END_LINE);
 }
 
-bool WT12Bluetooth::send(char data[], int dataSize){
+bool WT12Bluetooth::send(const char data[], int dataSize){
 	if( commandMode){
 		return false;
 	}
@@ -149,7 +149,7 @@ bool WT12Bluetooth::send(char data[], int dataSize){
 	return true;
 }
 
-bool WT12Bluetooth::sendString(char data[]){
+bool WT12Bluetooth::sendString(const char data[]){
 	return send(data, strlen(data));
 }
 
