@@ -20,12 +20,11 @@ Run the .bat file provided to generate a markdown file with the documentation
 
 # Limitations
 
-* The module is configured so that only one connection is allowed. Unexpected disconnections are not handled.
+* The module is configured so that only one connection is allowed. **Unexpected disconnections are not handled** (MUX mode should be used instead).
 
 # Links
 
 * An alternative comprehensive library for WT modules [Link](https://github.com/jrowberg/iwrap)
-
 
 # Documentation
 
@@ -50,7 +49,6 @@ Maximum size in bytes of the internal buffer used to receive serial information
 Arduino library for WT12 Bluetooth module
 
 ## Summary
-
  Members                        | Descriptions                                
 --------------------------------|---------------------------------------------
 `public  `[`WT12Bluetooth`](#class_w_t12_bluetooth_1aa319a90b78927c15891cb5e8fa48975f)`(HardwareSerial * serial,unsigned long baudrate)` | Constructor.
@@ -58,14 +56,14 @@ Arduino library for WT12 Bluetooth module
 `public bool `[`off`](#class_w_t12_bluetooth_1a5eb47b55802dce6b55332219b588f15f)`()` | Turns the module off.
 `public bool `[`reset`](#class_w_t12_bluetooth_1ad868be8dad1f7df8920f376b51de24da)`()` | Resets the module.
 `public bool `[`isConnected`](#class_w_t12_bluetooth_1a11143379bb672685e7bf9b148e164f2a)`()` | True if in data mode (a connection is established)
-`public bool `[`send`](#class_w_t12_bluetooth_1a05f234a3af85fcc7cabbf448b052308c)`(char data,int dataSize)` | Sends data using the current active connection.
+`public bool `[`send`](#class_w_t12_bluetooth_1a196e657d631546fa05228784885e34cd)`(const char data[],int dataSize)` | Sends data using the current active connection.
 `public bool `[`sendAsString`](#class_w_t12_bluetooth_1ac590116df1a28a5f33642effc368857a)`(int data)` | Sends a single value (as String) using the current active connection.
-`public bool `[`sendString`](#class_w_t12_bluetooth_1a7fdb3aa8511887ccc15346c26aa2d11d)`(char data)` | Sends a string using the current active connection.
-`public bool `[`connect`](#class_w_t12_bluetooth_1ab52437a799e48a608da4f0a4065a23ca)`(char btMacAddr)` | Opens a connection to the specified bluetooth mac addr.
+`public bool `[`sendString`](#class_w_t12_bluetooth_1ac7bb91aee812de96d60a7129937a74cc)`(const char data[])` | Sends a string using the current active connection.
+`public bool `[`connect`](#class_w_t12_bluetooth_1a30ce05c35dee3f75c6a50cd84c282872)`(const char btMacAddr[])` | Opens a connection to the specified bluetooth mac addr.
 `public bool `[`waitForConnection`](#class_w_t12_bluetooth_1abd6e211cd531dcf7c4f6b2d31d4f3cb3)`(unsigned long timeoutMs)` | Waits for a connection to be initiated from a remote module.
-`public int `[`receiveData`](#class_w_t12_bluetooth_1ae6a39bad1ad70cdc16969286e20ab638)`(char buffer,int maxBytes)` | Receives data from the active connection.
+`public int `[`receiveData`](#class_w_t12_bluetooth_1ae6a39bad1ad70cdc16969286e20ab638)`(char buffer[],int maxBytes)` | Receives data from the active connection.
 `public bool `[`closeConnection`](#class_w_t12_bluetooth_1a42cded905d08cdb69f4782ef45cfb074)`()` | Closes the current connection.
-`public bool `[`setName`](#class_w_t12_bluetooth_1af12df69b54d33a90a9624706ca17a388)`(const char name)` | Sets the name of the module.
+`public bool `[`setName`](#class_w_t12_bluetooth_1af12df69b54d33a90a9624706ca17a388)`(const char name[])` | Sets the name of the module.
 
 ## Members
 
@@ -107,7 +105,7 @@ True if in data mode (a connection is established)
 #### Returns
 true if the operation went well, false otherwise
 
-#### `public bool `[`send`](#class_w_t12_bluetooth_1a05f234a3af85fcc7cabbf448b052308c)`(char data,int dataSize)` 
+#### `public bool `[`send`](#class_w_t12_bluetooth_1a196e657d631546fa05228784885e34cd)`(const char data[],int dataSize)` 
 
 Sends data using the current active connection.
 
@@ -126,7 +124,7 @@ Sends a single value (as String) using the current active connection.
 #### Returns
 true if the operation went well (a connection is active), false otherwise
 
-#### `public bool `[`sendString`](#class_w_t12_bluetooth_1a7fdb3aa8511887ccc15346c26aa2d11d)`(char data)` 
+#### `public bool `[`sendString`](#class_w_t12_bluetooth_1ac7bb91aee812de96d60a7129937a74cc)`(const char data[])` 
 
 Sends a string using the current active connection.
 
@@ -136,7 +134,7 @@ Sends a string using the current active connection.
 #### Returns
 true if the operation went well (a connection is active), false otherwise
 
-#### `public bool `[`connect`](#class_w_t12_bluetooth_1ab52437a799e48a608da4f0a4065a23ca)`(char btMacAddr)` 
+#### `public bool `[`connect`](#class_w_t12_bluetooth_1a30ce05c35dee3f75c6a50cd84c282872)`(const char btMacAddr[])` 
 
 Opens a connection to the specified bluetooth mac addr.
 
@@ -157,7 +155,7 @@ If a connection is already active this method does nothing
 #### Returns
 true if the operation went well, false if timeout
 
-#### `public int `[`receiveData`](#class_w_t12_bluetooth_1ae6a39bad1ad70cdc16969286e20ab638)`(char buffer,int maxBytes)` 
+#### `public int `[`receiveData`](#class_w_t12_bluetooth_1ae6a39bad1ad70cdc16969286e20ab638)`(char buffer[],int maxBytes)` 
 
 Receives data from the active connection.
 
@@ -178,7 +176,7 @@ If there is no active connection, the method does nothing
 #### Returns
 true if the operation went well, false otherwise
 
-#### `public bool `[`setName`](#class_w_t12_bluetooth_1af12df69b54d33a90a9624706ca17a388)`(const char name)` 
+#### `public bool `[`setName`](#class_w_t12_bluetooth_1af12df69b54d33a90a9624706ca17a388)`(const char name[])` 
 
 Sets the name of the module.
 
